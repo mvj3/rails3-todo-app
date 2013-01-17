@@ -34,3 +34,14 @@
 <div class='clear'></div>
 
 <%= link_to 'Back', projects_path %>
+
+
+
+<%= javascript_tag do %>
+  var FAYE_IP = "<%= FAYE_IP %>";
+  var client = new Faye.Client("http://" + FAYE_IP + ":9292/faye");
+  client.subscribe("<%= project_path(@project) %>", function(data) {
+    var task_view = $('#task-'+ data.task_id).remove();
+    $('#'+ data.task_state + '-tasks').append(task_view).fadeIn();
+  });
+<% end %>

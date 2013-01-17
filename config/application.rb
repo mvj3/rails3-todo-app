@@ -40,3 +40,5 @@ module TODO
     config.filter_parameters += [:password]
   end
 end
+
+::FAYE_IP = `ifconfig | grep 192.168`.scan(/192.168[\.0-9]*/)[0]

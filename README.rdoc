@@ -3,3 +3,8 @@
 This is a basic application using Rails 3.0.7 and Jquery.
 
 More information at http://blog.bell-n-whistle.com
+
+
+== INSTALL
+
+See install.md
